@@ -16,3 +16,13 @@
     amount_raised_in_pence: 5000
   )
 end
+
+
+10.times do
+  Investment.create(
+    name: Faker::Name.first_name,
+    amount_in_pence: 1000,
+    contact_email: Faker::Internet.email,
+    campaign: Campaign.all.sample
+  )
+end

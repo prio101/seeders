@@ -1,7 +1,7 @@
 class Campaign < ApplicationRecord
-
   DEFAULT_CURRENCY = "GBP"
 
+  has_many :investments
 
   # amount in pound
   def target_amount
