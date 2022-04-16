@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2022_04_16_160252) do
   create_table "investments", force: :cascade do |t|
     t.string "name"
     t.string "contact_email"
-    t.integer "amount_in_pence"
+    t.integer "amount"
     t.bigint "campaign_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
