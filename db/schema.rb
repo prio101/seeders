@@ -10,30 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_16_160252) do
-
+ActiveRecord::Schema.define(version: 20_220_416_160_252) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "campaigns", force: :cascade do |t|
-    t.string "name"
-    t.string "image_url"
-    t.bigint "target_amount_in_pence"
-    t.bigint "amount_raised_in_pence"
-    t.string "sector"
-    t.string "country"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+  create_table 'campaigns', force: :cascade do |t|
+    t.string 'name'
+    t.string 'image_url'
+    t.bigint 'target_amount_in_pence'
+    t.bigint 'amount_raised_in_pence'
+    t.string 'sector'
+    t.string 'country'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
   end
 
-  create_table "investments", force: :cascade do |t|
-    t.string "name"
-    t.string "contact_email"
-    t.integer "amount"
-    t.bigint "campaign_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["campaign_id"], name: "index_investments_on_campaign_id"
+  create_table 'investments', force: :cascade do |t|
+    t.string 'name'
+    t.string 'contact_email'
+    t.integer 'amount'
+    t.bigint 'campaign_id'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.index ['campaign_id'], name: 'index_investments_on_campaign_id'
   end
-
 end

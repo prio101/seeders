@@ -18,5 +18,4 @@ class CampaignSerializer
   attribute :investment_multiple do |object|
     object.investment_multiple
   end
-
 end

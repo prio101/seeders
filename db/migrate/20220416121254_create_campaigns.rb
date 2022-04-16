@@ -7,7 +7,7 @@ class CreateCampaigns < ActiveRecord::Migration[6.0]
       t.integer :amount_raised_in_pence, limit: 8
       t.string  :sector
       t.string  :country
-      
+
       t.timestamps
     end
   end

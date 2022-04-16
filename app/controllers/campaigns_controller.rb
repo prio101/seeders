@@ -2,8 +2,12 @@ class CampaignsController < ApplicationController
   include JSONAPI::Pagination
 
   def index
-    campaigns = Campaign.all
-   
+    campaigns = if params[:q]
+                  Campaign.ransack(name_or_sector_or_country_i_cont_any: params[:q]).result
+                else
+                  Campaign.all
+                end
+
     jsonapi_paginate(campaigns) do |paginated|
       render jsonapi: paginated, status: :ok
     end

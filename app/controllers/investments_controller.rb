@@ -10,11 +10,11 @@ class InvestmentsController < ApplicationController
 
   def create
     investment = Investment.new(investments_params)
-    if(investment.save!)
+    if investment.save
       render jsonapi: investment, status: :created
     else
-      render json: { error: investment.errors }, 
-        status: :unprocessable_entity
+      render json: { error: investment.errors },
+             status: :unprocessable_entity
     end
   end
 
