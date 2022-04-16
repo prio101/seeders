@@ -1,6 +1,9 @@
 class Investment < ApplicationRecord
   before_validation :convert_amount_to_pence
+  before_save :update_campaign_amount
+
   belongs_to :campaign
+  
 
   validates_presence_of :amount, :contact_email, :name
   validates_numericality_of :amount
@@ -25,5 +28,16 @@ class Investment < ApplicationRecord
 
   def convert_amount_to_pence
     self.amount = self.amount * 100
+  end
+
+  def update_campaign_amount
+    begin
+      ActiveRecord::Base.transaction do
+        updated_amount = self.campaign.amount_raised_in_pence + self.amount
+        self.campaign.update!(amount_raised_in_pence: updated_amount) 
+      end  
+    rescue => exception
+      logger.error "errors: #{exception.split(" ").join("\n") }"
+    end    
   end
 end
