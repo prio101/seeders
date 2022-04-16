@@ -10,6 +10,7 @@ Things you may want to cover:
 **Please check the `.ruby-version` file**
 
 * System dependencies
+Please notice the `Gemfile` to get the bird's eye level view of the required gems / libs needed to be 
 
 * Configuration
 
