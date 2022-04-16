@@ -3,8 +3,8 @@ class CreateCampaigns < ActiveRecord::Migration[6.0]
     create_table :campaigns do |t|
       t.string  :name
       t.string  :image_url
-      t.decimal :target_amount
-      t.decimal :amount_raised
+      t.integer :target_amount_in_pence, limit: 8
+      t.integer :amount_raised_in_pence, limit: 8
       t.string  :sector
       t.string  :country
       

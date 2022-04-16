@@ -9,9 +9,10 @@
 25.times do
   Campaign.create(
     name: Faker::Movie.title,
-    target_amount: Faker::Number.decimal(l_digits: 4, r_digits: 2),
+    image_url: Faker::LoremFlickr.image,
+    target_amount_in_pence: 200000,
     sector: Faker::IndustrySegments.sector,
     country: Faker::Address.country,
-    amount_raised: Faker::Number.decimal(l_digits: 2, r_digits: 2)
+    amount_raised_in_pence: 5000
   )
 end

@@ -12,11 +12,14 @@
 
 ActiveRecord::Schema.define(version: 2022_04_16_121254) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "campaigns", force: :cascade do |t|
     t.string "name"
     t.string "image_url"
-    t.decimal "target_amount"
-    t.decimal "amount_raised"
+    t.bigint "target_amount_in_pence"
+    t.bigint "amount_raised_in_pence"
     t.string "sector"
     t.string "country"
     t.datetime "created_at", precision: 6, null: false
