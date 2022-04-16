@@ -35,9 +35,9 @@ class Investment < ApplicationRecord
       ActiveRecord::Base.transaction do
         updated_amount = self.campaign.amount_raised_in_pence + self.amount
         self.campaign.update!(amount_raised_in_pence: updated_amount) 
-      end  
+      end 
     rescue => exception
       logger.error "errors: #{exception.split(" ").join("\n") }"
-    end    
+    end  
   end
 end

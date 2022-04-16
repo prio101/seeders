@@ -17,6 +17,11 @@ gem 'puma', '~> 4.1'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# jsonapi
+gem 'jsonapi.rb'
+# ransack
+gem 'ransack'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
